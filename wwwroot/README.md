@@ -1,4 +1,0 @@
-BakterieIWirusy
-===============
-
-Bakterie i Wirusy
