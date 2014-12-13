@@ -25,7 +25,6 @@ function onYouTubeIframeAPIReady() {
         playerVars: {
             'controls': '0',
             'enablejsapi': '1',
-            'autoplay': '0',
         },
         events: {
             'onReady': onPlayerReady,
@@ -42,9 +41,12 @@ function onPlayerReady(event) {
 var done = false;
 
 function onPlayerStateChange(event) {
-    if (event.data == YT.PlayerState.PLAYING && !done) {
+    if (event.data === YT.PlayerState.PLAYING && !done) {
         muteVideo();
         done = true;
+    }
+    if (event.data === YT.PlayerState.ENDED) {
+        player.loadVideoById('8Csh94TGySQ');
     }
 }
 
