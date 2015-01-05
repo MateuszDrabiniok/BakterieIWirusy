@@ -1,5 +1,5 @@
 ﻿
-var player;
+
 $(document).ready(function () {
 
     $('.carousel').carousel({
@@ -31,6 +31,8 @@ function onYouTubeIframeAPIReady() {
             'onStateChange': onPlayerStateChange
         }
     });
+
+
 }
 
 // 4. The API will call this function when the video player is ready.
@@ -42,7 +44,7 @@ var done = false;
 
 function onPlayerStateChange(event) {
     if (event.data === YT.PlayerState.PLAYING && !done) {
-        muteVideo();
+        muteVideo(player);
         done = true;
     }
     if (event.data === YT.PlayerState.ENDED) {
@@ -50,8 +52,9 @@ function onPlayerStateChange(event) {
     }
 }
 
-function muteVideo() {
-    player.mute();
+
+function muteVideo(p) {
+    p.mute();
 }
 
 
