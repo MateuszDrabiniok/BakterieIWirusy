@@ -64,7 +64,7 @@ function onPlayerStateChange(event) {
 }
 
 function onPlayerStateChange2(event) {
-    if (event.data === YT.PlayerState.PLAYING && !done) {
+    if (event.data === YT.PlayerState.PLAYING && !done2) {
         muteVideo(player2);
         done2 = true;
     }
