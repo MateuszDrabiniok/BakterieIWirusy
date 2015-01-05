@@ -95,3 +95,8 @@ footer {
 .player {
     width: 100%
 }
+
+ #map-canvas {
+        width: 735px;
+        height: 400px;
+      }
